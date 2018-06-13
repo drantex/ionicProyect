@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title text-center>login</ion-title>
+    </ion-navbar>
+</ion-header>
+      
+<ion-content padding>
+    
+    <div class="content-login">
+
+        <form [formGroup]="form" (ngSubmit)="login()">
+            <ion-list>
+                <ion-item-group>
+                    <ion-item>
+                        <ion-icon name="person" item-start></ion-icon>
+                        <ion-label stacked>Correo electronico:</ion-label>
+                        <ion-input
+                            placeholder="Username"
+                            formControlName="Username"
+                            type="email"
+                            [(ngModel)]="Username">
+                            </ion-input>
+                        </ion-item>
+
+                    <ion-item>
+                        <ion-icon name="eye" item-start></ion-icon>
+                        <ion-label stacked> Password </ion-label><br>
+                            <ion-input
+                                placeholder="Password..."
+                                formControlName="Password"
+                                type="password"
+                                [(ngModel)]="Password">
+                        </ion-input>
+                    </ion-item>
+                
+                    <ion-item>
+                        <button
+                            ion-button
+                            color="primary"
+                            text-center
+                            block
+                            class="btn btn-primary btn-block"
+                            [disabled]="!form.valid">Ingresar
+                        </button>
+
+                    </ion-item>	
+
+                </ion-item-group>
+            </ion-list>
+        </form>
+        <ion-item>
+                <button 
+                    ion-button 
+                    block
+                    color="secondary"
+                    text-center
+                    ligth
+                    class="btn btn-primary btn-block"
+                    (click)="addEntry()">Registrar usuario
+                </button>      
+            </ion-item>	
+    </div>
+</ion-content>
+
